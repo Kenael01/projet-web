@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuration</title>
+</head>
+
+<body>
+    <header>
+        <h1>CesiBike – Supervision</h1>
+        <nav>
+            <ul>
+                <li><a href="accueil.html">accueil</a></li>
+                <li><a href="configuration.html">configuration</a></li>
+                <li><a href="visualisation.html">visualisation des postes</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <div>
+                <h2>Choix du nombre de postes</h2>
+                <p>Choisissez le nombre de postes à surveiller :</p>
+                <form>
+                    <label for="nombrePostes">Nombre de postes :</label>
+                    <input type="number" id="nombrePostes" name="nombrePostes" min="1" max="100">
+                    <button type="submit">Valider</button>
+                </form>
+            </div>
+            <div>
+                <h2>Configuration pour chaque poste</h2>
+
+                <form>
+                    <label for="nombreEtapes">Nombre d'étapes :</label>
+                    <input type="number" id="nombreEtapes" name="nombreEtapes" min="1" max="10">
+                    <button type="submit">Valider</button>
+                    <br><br>
+                    <label for="listePieces">liste des pieces necessaire et leur nombres en stock :</label>
+                    <input type="text" id="listePieces" name="listePieces" placeholder="Ex: Roue-2, Pedale-2, Selle-1">
+                    <button type="submit">Valider</button>
+                    <br><br>
+                    <label for="listePiecesEtapes">liste des pieces par etape et leur quantités :</label>
+                    <input type="text" id="listePiecesEtapes" name="listePiecesEtapes"
+                        placeholder="Ex: Etape1: Roue-2; Etape2: Pedale-2">
+                    <button type="submit">Valider</button>
+
+
+                </form>
+            </div>
+            <div>
+                <h2>Configuration pour chaque étapes de chaque poste</h2>
+                <form>
+                    <button type="submit">Enregistrer</button>
+                </form>
+
+
+        </article>
+    </main>
+    <footer>tous droits réservés</footer>
+
+</body>
+
+</html>
