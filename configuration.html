@@ -20,16 +20,23 @@
     </header>
     <main>
         <article>
-            <div>
+            <div class="nbPostes">
                 <h2>Choix du nombre de postes</h2>
                 <p>Choisissez le nombre de postes à surveiller :</p>
-                <form>
-                    <label for="nombrePostes">Nombre de postes :</label>
-                    <input type="number" id="nombrePostes" name="nombrePostes" min="1" max="6">
-                    <button type="submit">Valider</button>
-                </form>
-            </div>
-            <div>
+
+                <label>Nombre de postes :</label>
+                <input type="number" id="nbPostes" min="1">
+                <button onclick="genererPostes()">Valider</button>
+
+                <div id="postesContainer">
+
+
+
+                </div>
+
+
+
+                <!-- <div class="poste">
                 <h2>Configuration pour chaque poste</h2>
 
                 <form>
@@ -40,34 +47,36 @@
                     <input type="number" id="nombreEtapes" name="nombreEtapes" min="1" max="12">
                     <button type="submit">Valider</button>
                     <br><br>
-                    <label for="listePieces">liste des pieces necessaire et leur nombres en stock :</label>
-                    <input type="text" id="listePieces" name="listePieces" placeholder="Ex: Roue-2, Pedale-2, Selle-1">
-                    <button type="submit">Valider</button>
-                    <br><br>
-                    <button type="submit">Valider</button>
 
 
+                    <div class="piecesContainer">
+                        <div class="piece">
+                            <input type="text" placeholder="Nom pièce">
+                            <input type="number" placeholder="Stock initial">
+                        </div>
+                    </div>
+                    <button class="addPiece">Ajouter une pièce</button>
                 </form>
             </div>
-            <div>
-                <h2>Configuration pour chaque étapes de chaque poste</h2>
-                <form>
-                    <label for="choixPosteEtape">Choix du poste :</label>
-                    <input type="number" id="choixPosteEtape" name="choixPosteEtape" min="1" max="6">
-                    <br><br>
-                    <label for="numeroEtapes">Numéro de l'étape :</label>
-                    <input type="number" id="numeroEtapes" name="numeroEtapes" min="1" max="10">
-                    <br><br>
-                    <label for="PiecesUtilise">Liste des pieces utilisées pour cette etape :</label>
-                    <input type="text" id="PiecesUtilise" name="PiecesUtilise" placeholder="Ex: Roue-1, Pedale-1">
-                    <button type="submit">Valider</button>
-                </form>
-            </div>
+
+            <div class="etape">
+                <h3>Étape 1</h3>
+
+                <div class="piecesEtapeContainer">
+                    <div class="pieceEtape">
+                        <input type="text" placeholder="Nom pièce utilisée">
+                        <input type="number" placeholder="Quantité utilisée">
+                    </div>
+                </div>
+
+                <button class="addPieceEtape">Ajouter une pièce</button>
+            </div> -->
+
         </article>
     </main>
+    <script src="javascript/scripts.js"></script>
     <footer>tous droits réservés</footer>
 
 </body>
 
 </html>
-
