@@ -1,6 +1,7 @@
 
 function genererPostes() {
     const nb = document.getElementById("nbPostes").value;
+    localStorage.setItem("nombrePostes", nb);
     const container = document.getElementById("postesContainer");
 
     container.innerHTML = "";
@@ -30,6 +31,7 @@ function genererPostes() {
             <button onclick="ajouterPiece(${i})">+ Ajouter une pièce</button>
              <button type="button" onclick="genererCSVstock(${i})">📦 Générer CSV Stock</button>
                 <button type="button" onclick="genererCSVetapes(${i})">🛠️ Générer CSV Étapes</button>
+                
         `;
 
         container.appendChild(div);
@@ -68,10 +70,6 @@ function ajouterPieceEtape(numPoste, numEtape) {
 
     container.appendChild(div);
 }
-
-
-
-
 
 
 function genererEtapes(numPoste) {
@@ -150,7 +148,36 @@ function telechargerCSV(contenu, nomFichier) {
 }
 
 
+window.addEventListener("DOMContentLoaded", () => {
 
+    const nbPostes = localStorage.getItem("nombrePostes") || 1;
+    const select = document.getElementById("postes-select");
 
+    // On vide le select
+    select.innerHTML = "";
 
+    // On génère automatiquement les options
+    for (let i = 1; i <= nbPostes; i++) {
+        const opt = document.createElement("option");
+        opt.value = i;
+        opt.textContent = "Poste " + i;
+        select.appendChild(opt);
+    }
 
+    // On récupère soit l'URL, soit le dernier poste utilisé
+    const params = new URLSearchParams(window.location.search);
+    const fromUrl = params.get("poste");
+    const fromStorage = localStorage.getItem("posteSelectionne");
+
+    const posteActuel = fromUrl || fromStorage || 1;
+
+    // On applique la valeur
+    select.value = posteActuel;
+    document.getElementById("poste-number").textContent = posteActuel;
+
+    // On change de poste quand la liste change
+    select.addEventListener("change", () => {
+        localStorage.setItem("posteSelectionne", select.value);
+        window.location.search = "?poste=" + select.value;
+    });
+});
