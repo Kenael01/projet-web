@@ -20,9 +20,9 @@ $workstations = $pdo->query("
 ?>
 
 <div class="page-header">
-    <h2>📊 Visualisation de la production</h2>
+    <h2> Visualisation de la production</h2>
     <div class="button-group">
-        <button class="btn btn-primary" onclick="location.reload()">🔄 Rafraîchir</button>
+        <button class="btn btn-primary" onclick="location.reload()"> Rafraîchir</button>
     </div>
 </div>
 
@@ -54,7 +54,7 @@ $workstations = $pdo->query("
                 <td><?= $ws['last_execution'] ? date('d/m/Y H:i', strtotime($ws['last_execution'])) : 'Aucune' ?></td>
                 <td>
                     <a href="/visualization/detail?workstation_id=<?= $ws['workstation_id'] ?>" class="btn btn-sm btn-primary">
-                        📋 Voir détails
+                         Voir détails
                     </a>
                 </td>
             </tr>
@@ -65,7 +65,7 @@ $workstations = $pdo->query("
 
 <!-- Alertes stock -->
 <div class="section">
-    <h3>⚠️ Alertes stock</h3>
+    <h3> Alertes stock</h3>
     <?php
     $alerts = $pdo->query("
         SELECT 
@@ -83,7 +83,7 @@ $workstations = $pdo->query("
     ?>
     
     <?php if (empty($alerts)): ?>
-        <p class="alert-success">✅ Tous les stocks sont au niveau requis</p>
+        <p class="alert-success"> Tous les stocks sont au niveau requis</p>
     <?php else: ?>
         <table class="data-table">
             <thead>
@@ -102,7 +102,7 @@ $workstations = $pdo->query("
                     <td><?= htmlspecialchars($alert['part_name']) ?></td>
                     <td><strong><?= $alert['available_quantity'] ?></strong></td>
                     <td><?= $alert['minimum_quantity'] ?></td>
-                    <td><span class="badge badge-danger">⚠️ Niveau bas</span></td>
+                    <td><span class="badge badge-danger"> Niveau bas</span></td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>
