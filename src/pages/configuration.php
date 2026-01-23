@@ -24,8 +24,8 @@
         <h2>Creer un poste</h2>
         <label for='workstation_number'>Numero du poste :</label>
         <input type='number' id='workstation_number' name='workstation_number' required><br>
-        <label for='name_workstation'>Nom du poste :</label>
-        <input type='text' id='name_workstation' name='name_workstation' required><br>
+        <label for='workstation_name'>Nom du poste :</label>
+        <input type='text' id='workstation_name' name='workstation_name' required><br>
         <label for='description'>Description :</label>
         <input type='text' id='description' name='description' required><br>
         <input type='submit' value='Enregistrer'>
